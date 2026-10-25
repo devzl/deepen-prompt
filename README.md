@@ -75,6 +75,38 @@ cp -R /absolute/path/to/deepen-prompt/plugins/deepen-prompt/skills/deepen-prompt
 cp -R /absolute/path/to/deepen-prompt/plugins/deepen-prompt/skills/dpx ~/.claude/skills/dpx
 ```
 
+### OpenAI Codex / Codex CLI
+
+The repo ships a Codex marketplace (`.agents/plugins/marketplace.json`):
+
+```bash
+codex plugin marketplace add devzl/deepen-prompt
+codex plugin add deepen-prompt@deepen-prompt
+```
+
+Or copy the skills directly (project `.codex/skills/` or global `~/.codex/skills/`):
+
+```bash
+mkdir -p ~/.codex/skills
+cp -R /absolute/path/to/deepen-prompt/plugins/deepen-prompt/skills/deepen-prompt ~/.codex/skills/deepen-prompt
+cp -R /absolute/path/to/deepen-prompt/plugins/deepen-prompt/skills/dpx ~/.codex/skills/dpx
+```
+
+### GitHub Copilot
+
+Copilot CLI reads `.claude-plugin/marketplace.json` natively:
+
+```bash
+copilot plugin marketplace add devzl/deepen-prompt
+copilot plugin install deepen-prompt@deepen-prompt
+```
+
+### Other hosts
+
+Any tool that supports the open [Agent Skills](https://agentskills.io)
+`SKILL.md` format (Cursor, Gemini CLI, OpenCode, Kiro, Windsurf, ...) can use
+the two skill folders: copy both into that tool's skills directory.
+
 ## Repository layout
 
 ```text
