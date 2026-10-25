@@ -101,17 +101,74 @@ copilot plugin marketplace add devzl/deepen-prompt
 copilot plugin install deepen-prompt@deepen-prompt
 ```
 
-### Other hosts
+### Cursor
 
-Any tool that supports the open [Agent Skills](https://agentskills.io)
-`SKILL.md` format (Cursor, Gemini CLI, OpenCode, Kiro, Windsurf, ...) can use
-the two skill folders: copy both into that tool's skills directory.
+Cursor reads `.claude/skills/` and `.codex/skills/` for compatibility, so the
+copies above work. Or install directly:
+
+```bash
+mkdir -p .cursor/skills
+cp -R plugins/deepen-prompt/skills/deepen-prompt .cursor/skills/deepen-prompt
+cp -R plugins/deepen-prompt/skills/dpx .cursor/skills/dpx
+```
+
+### Gemini CLI
+
+Gemini CLI recognizes `.agents/skills/`, which this repo provides:
+
+```bash
+gemini skills install https://github.com/devzl/deepen-prompt
+```
+
+Or copy into `.gemini/skills/` (project) or `~/.gemini/skills/` (global):
+
+```bash
+mkdir -p .gemini/skills
+cp -R plugins/deepen-prompt/skills/deepen-prompt .gemini/skills/deepen-prompt
+cp -R plugins/deepen-prompt/skills/dpx .gemini/skills/dpx
+```
+
+### OpenCode
+
+OpenCode discovers `SKILL.md` in `.agents/skills/`, `.claude/skills/` and
+`.opencode/skills/`. Point it at this repo, or copy:
+
+```bash
+mkdir -p .opencode/skills
+cp -R plugins/deepen-prompt/skills/deepen-prompt .opencode/skills/deepen-prompt
+cp -R plugins/deepen-prompt/skills/dpx .opencode/skills/dpx
+```
+
+### Kiro
+
+Import from the repo URL (Kiro -> Import a skill), or copy into `.kiro/skills/`
+(project) or `~/.kiro/skills/` (global):
+
+```bash
+mkdir -p .kiro/skills
+cp -R plugins/deepen-prompt/skills/deepen-prompt .kiro/skills/deepen-prompt
+cp -R plugins/deepen-prompt/skills/dpx .kiro/skills/dpx
+```
+
+### Windsurf
+
+Windsurf uses the same `.agents/skills/` convention, or copy both skill
+folders into the skills directory your setup scans.
+
+### Any other Agent Skills host
+
+Copy both folders from `plugins/deepen-prompt/skills/` into the directory your
+tool scans for `SKILL.md`. With no skills support, paste the body of
+[SKILL.md](plugins/deepen-prompt/skills/deepen-prompt/SKILL.md) (below the
+frontmatter) into your prompt.
 
 ## Repository layout
 
 ```text
 .claude-plugin/marketplace.json
 .agents/plugins/marketplace.json
+.agents/skills/deepen-prompt -> canonical skill (symlink)
+.agents/skills/dpx           -> shortcut skill (symlink)
 plugins/deepen-prompt/
   plugin.json
   .claude-plugin/plugin.json
