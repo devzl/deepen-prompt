@@ -39,24 +39,36 @@ It preserves project instructions and authorization boundaries, and reports
 failed or unavailable checks. The canonical instructions are in
 [SKILL.md](plugins/deepen-prompt/skills/deepen-prompt/SKILL.md).
 
-## Use
+## How to use
 
-Invoke the full name or its shortcut in a host that exposes skills as slash
-commands:
+Once installed, type the shortcut, then your task:
 
 ```text
-/deepen-prompt Investigate why our checkout conversion dropped last week.
 /dpx Investigate why our checkout conversion dropped last week.
 ```
 
-In hosts that use dollar-prefixed skills, use `$deepen-prompt` or `$dpx`.
-For a host that namespaces plugin skills, the corresponding invocations are
-`/deepen-prompt:deepen-prompt` and `/deepen-prompt:dpx`.
+That's it. The agent states what a top practitioner would do differently,
+rewrites the prompt around raw sources, named methods and an independent
+check, then carries it out in the same turn. With no task given, it deepens
+the most recent task in the conversation.
 
-The shortcut is configured as a small
-[alias skill](plugins/deepen-prompt/skills/dpx/SKILL.md) that loads the canonical
-instructions. Both skills ship together; no separate `deepen-prompt`
-installation is required.
+### Shortcuts
+
+| Host | Full name | Shortcut |
+|---|---|---|
+| Slash-command hosts (Claude Code, Cursor, Gemini CLI, ...) | `/deepen-prompt` | `/dpx` |
+| Dollar-prefixed hosts (Codex) | `$deepen-prompt` | `$dpx` |
+| Namespaced plugin install | `/deepen-prompt:deepen-prompt` | `/deepen-prompt:dpx` |
+
+`dpx` ships as a small alias skill that loads the canonical instructions. Both
+skills install together; no separate `deepen-prompt` installation is required.
+
+Want your own shorter alias? In Claude Code, add a command such as
+`~/.claude/commands/dp.md`:
+
+```text
+Use the `deepen-prompt` skill on this task, then carry it out.
+```
 
 ## Install from this checkout
 
