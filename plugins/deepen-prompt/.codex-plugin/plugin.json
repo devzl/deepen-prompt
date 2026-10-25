@@ -1,0 +1,11 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "deepen-prompt",
+  "version": "1.0.0",
+  "description": "Deepen a task with primary sources, named methods, and independent verification, then carry it out without expanding scope.",
+  "author": {
+    "name": "devzl",
+    "url": "https://github.com/devzl"
+  },
+  "license": "MIT"
+}

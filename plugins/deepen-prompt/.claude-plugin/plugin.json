@@ -1,0 +1,17 @@
+{
+  "name": "deepen-prompt",
+  "description": "Deepen a task with primary sources, named methods, and independent verification, then carry it out without expanding scope.",
+  "version": "1.0.0",
+  "author": {
+    "name": "devzl"
+  },
+  "homepage": "https://github.com/devzl/deepen-prompt",
+  "repository": "https://github.com/devzl/deepen-prompt",
+  "license": "MIT",
+  "keywords": [
+    "prompting",
+    "research",
+    "verification",
+    "productivity"
+  ]
+}

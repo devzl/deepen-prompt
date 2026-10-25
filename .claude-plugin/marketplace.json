@@ -1,0 +1,15 @@
+{
+  "name": "deepen-prompt",
+  "owner": {
+    "name": "devzl",
+    "url": "https://github.com/devzl"
+  },
+  "description": "Marketplace for the deepen-prompt Agent Skill: deeper methods, same scope, followed by execution.",
+  "plugins": [
+    {
+      "name": "deepen-prompt",
+      "source": "./plugins/deepen-prompt",
+      "description": "Deepen a task with primary sources, named methods, and independent verification, then carry it out without expanding scope."
+    }
+  ]
+}
