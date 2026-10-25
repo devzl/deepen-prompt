@@ -8,6 +8,24 @@ it out without expanding scope.
 
 **Official name:** `deepen-prompt`. **Shortcut:** `dpx`.
 
+## Why use it
+
+- **Deeper, not bigger.** Same task, same size of output, done the way a top
+  practitioner would. It never adds deliverables or sections.
+- **Starts from the raw source.** Datasets, specs, logs, filings and source
+  files, not blog posts or someone else's summary.
+- **Named methods, not "best practices".** It picks specific techniques and
+  tools and says why each fits the task.
+- **Checked by something other than the model.** A test suite, reference data,
+  a standard or a measurement, so the result isn't graded by the same
+  system that produced it.
+- **Honest about failure.** If the check fails or can't be run, it says so
+  instead of claiming success.
+- **No extra round trip.** It rewrites the prompt and carries it out in the
+  same turn; you don't review the rewrite first.
+- **Respects your rules.** Project instructions and authorization boundaries
+  still win.
+
 ## What it does
 
 Given a task or question, Deepen Prompt identifies:
