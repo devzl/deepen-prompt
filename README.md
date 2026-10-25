@@ -70,23 +70,41 @@ Want your own shorter alias? In Claude Code, add a command such as
 Use the `deepen-prompt` skill on this task, then carry it out.
 ```
 
-## Install from this checkout
+## Install
 
 This repository follows [handover](https://github.com/devzl/handover)'s plugin
 and marketplace layout. Run installation commands in your target host.
 
-### Claude Code plugin
+### Claude Code (plugin marketplace, recommended)
 
 ```text
-/plugin marketplace add /absolute/path/to/deepen-prompt
+/plugin marketplace add devzl/deepen-prompt
 /plugin install deepen-prompt@deepen-prompt
+```
+
+From a local checkout, use the path instead:
+`/plugin marketplace add /absolute/path/to/deepen-prompt`.
+
+To enable it for a whole team, add to `.claude/settings.json`:
+
+```json
+{
+  "extraKnownMarketplaces": {
+    "deepen-prompt": {
+      "source": { "source": "github", "repo": "devzl/deepen-prompt" }
+    }
+  },
+  "enabledPlugins": {
+    "deepen-prompt@deepen-prompt": true
+  }
+}
 ```
 
 The plugin includes both `deepen-prompt` and `dpx` skills. If an existing
 personal `/dpx` command takes precedence, use `/deepen-prompt:dpx` to select
 the packaged shortcut explicitly.
 
-### Manual skill installation
+### Claude Code (manual skill copy)
 
 Copy both skill folders so the relative shortcut reference resolves.
 For a project using `.agents/skills/`, run from that project's root:
